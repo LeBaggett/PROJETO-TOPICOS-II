@@ -2411,7 +2411,7 @@
 							)
 						)
 					)
-					(number "7"
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2429,7 +2429,7 @@
 							)
 						)
 					)
-					(number "8"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2447,7 +2447,7 @@
 							)
 						)
 					)
-					(number "9"
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2484,7 +2484,7 @@
 							)
 						)
 					)
-					(number "1"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2502,7 +2502,7 @@
 							)
 						)
 					)
-					(number "4"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2520,7 +2520,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5131,28 +5131,6 @@
 			)
 		)
 	)
-	(global_label "B6"
-		(shape input)
-		(at 125.73 88.9 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "44d96bf7-0dad-44ce-924e-12807140ffff")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 120.2653 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "B7"
 		(shape input)
 		(at 125.73 91.44 180)
@@ -5197,6 +5175,28 @@
 			)
 		)
 	)
+	(global_label "B6"
+		(shape input)
+		(at 125.73 88.9 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "44d96bf7-0dad-44ce-924e-12807140ffff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 120.2653 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "B9"
 		(shape input)
 		(at 125.73 96.52 180)
@@ -5215,6 +5215,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "B1"
+		(shape input)
+		(at 161.29 76.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "44d96bf7-0dad-44ce-924e-12807140ffff")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 166.7547 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5307,28 +5329,6 @@
 			)
 		)
 	)
-	(global_label "B1"
-		(shape input)
-		(at 161.29 76.2 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "44d96bf7-0dad-44ce-924e-12807140ffff")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 166.7547 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "MISO"
 		(shape input)
 		(at 161.29 68.58 0)
@@ -5395,50 +5395,6 @@
 			)
 		)
 	)
-	(global_label "LCD_BL"
-		(shape output)
-		(at 125.73 81.28 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6d8175de-1d64-43ab-8b5b-d413386d2be3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 115.911 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "SD_CS"
-		(shape output)
-		(at 161.29 63.5 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6d8175de-1d64-43ab-8b5b-d413386d2be3")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 170.2018 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "LCD_CS"
 		(shape output)
 		(at 161.29 60.96 0)
@@ -5452,6 +5408,28 @@
 		(uuid "6d8175de-1d64-43ab-8b5b-d413386d2be3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 171.2904 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LCD_DC"
+		(shape output)
+		(at 161.29 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6d8175de-1d64-43ab-8b5b-d413386d2be3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 171.3509 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5483,9 +5461,9 @@
 			)
 		)
 	)
-	(global_label "LCD_DC"
+	(global_label "SD_CS"
 		(shape output)
-		(at 161.29 55.88 0)
+		(at 161.29 63.5 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5495,7 +5473,7 @@
 		)
 		(uuid "6d8175de-1d64-43ab-8b5b-d413386d2be3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 171.3509 55.88 0)
+			(at 170.2018 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5545,6 +5523,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LCD_BL"
+		(shape output)
+		(at 125.73 81.28 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6d8175de-1d64-43ab-8b5b-d413386d2be3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 115.911 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -6038,7 +6038,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 229.87 62.23 0)
 			(effects
 				(font
@@ -6114,7 +6114,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 233.172 73.66 90)
 			(effects
 				(font
@@ -6184,7 +6184,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
 			(at 56.8452 110.49 0)
 			(effects
 				(font
@@ -6254,7 +6254,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Buzzer_Beeper:Buzzer_12x9.5RM7.6"
 			(at 75.565 104.14 90)
 			(effects
 				(font
@@ -6324,7 +6324,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 256.032 73.66 90)
 			(effects
 				(font
@@ -6394,7 +6394,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 233.172 137.16 90)
 			(effects
 				(font
@@ -6462,7 +6462,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "slidesw:SW_EG1213"
 			(at 77.47 53.34 0)
 			(effects
 				(font
@@ -6536,7 +6536,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm"
 			(at 118.11 33.9852 0)
 			(effects
 				(font
@@ -6606,7 +6606,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_QFP:LQFP-48_7x7mm_P0.5mm"
+		(property "Footprint" "STM32:MODULE_ZC323000-with-pinholder"
 			(at 128.27 124.46 0)
 			(effects
 				(font
@@ -6814,7 +6814,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Battery:BatteryHolder_Keystone_1042_1x18650"
 			(at 24.13 55.626 90)
 			(effects
 				(font
@@ -6882,7 +6882,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 207.01 125.73 0)
 			(effects
 				(font
@@ -6958,7 +6958,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 256.032 137.16 90)
 			(effects
 				(font
@@ -7026,7 +7026,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 252.73 93.98 0)
 			(effects
 				(font
@@ -7371,7 +7371,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 229.87 93.98 0)
 			(effects
 				(font
@@ -7445,7 +7445,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 207.01 93.98 0)
 			(effects
 				(font
@@ -7521,7 +7521,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm"
 			(at 56.8452 60.96 0)
 			(effects
 				(font
@@ -7591,7 +7591,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 210.312 105.41 90)
 			(effects
 				(font
@@ -7659,7 +7659,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 229.87 125.73 0)
 			(effects
 				(font
@@ -7735,7 +7735,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 60.452 157.48 90)
 			(effects
 				(font
@@ -7805,7 +7805,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 210.312 137.16 90)
 			(effects
 				(font
@@ -7939,7 +7939,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
 			(at 119.0752 180.34 0)
 			(effects
 				(font
@@ -8007,7 +8007,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 252.73 62.23 0)
 			(effects
 				(font
@@ -8081,7 +8081,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
 			(at 65.7352 181.61 0)
 			(effects
 				(font
@@ -8149,7 +8149,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "nokia_5110:PinSocket_1x08_P2.54mm_Vertical"
 			(at 92.71 154.94 0)
 			(effects
 				(font
@@ -8303,7 +8303,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W2.0mm_P2.50mm"
 			(at 154.6352 172.72 0)
 			(effects
 				(font
@@ -8438,7 +8438,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 207.01 62.23 0)
 			(effects
 				(font
@@ -8512,7 +8512,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
 			(at 118.11 46.6852 0)
 			(effects
 				(font
@@ -8580,7 +8580,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH-12mm_Wuerth-430476085716"
 			(at 252.73 125.73 0)
 			(effects
 				(font
@@ -8656,7 +8656,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 210.312 73.66 90)
 			(effects
 				(font
@@ -8858,7 +8858,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 233.172 105.41 90)
 			(effects
 				(font
@@ -8928,7 +8928,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 256.032 105.41 90)
 			(effects
 				(font
@@ -8997,7 +8997,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "microsd:microsd_module"
 			(at 41.91 168.91 0)
 			(effects
 				(font
@@ -9024,7 +9024,7 @@
 				(hide yes)
 			)
 		)
-		(pin "7"
+		(pin "2"
 			(uuid "9c81c1c9-71e9-4d31-b15e-6289f4e381cf")
 		)
 		(pin "4"
@@ -9033,7 +9033,7 @@
 		(pin "3"
 			(uuid "55267ded-cfb9-4013-89d1-fc0be4924746")
 		)
-		(pin "9"
+		(pin "5"
 			(uuid "295cbb6b-e1f2-4842-93db-76d41a817a8e")
 		)
 		(pin "6"
@@ -9042,7 +9042,7 @@
 		(pin "1"
 			(uuid "be574da0-9236-437b-bffe-d705dbf6b39c")
 		)
-		(pin "8"
+		(pin "6"
 			(uuid "1cb2c3ba-7e9f-48cc-8059-808fb7e4c08d")
 		)
 		(instances
@@ -9082,7 +9082,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
 			(at 141.9352 172.72 0)
 			(effects
 				(font
@@ -9218,7 +9218,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 115.062 167.64 90)
 			(effects
 				(font
@@ -9288,7 +9288,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P2.50mm"
 			(at 69.5452 60.96 0)
 			(effects
 				(font
