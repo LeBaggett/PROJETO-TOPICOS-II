@@ -114,7 +114,7 @@
 	)
 	(fp_rect
 		(start -3.5 -7.75)
-		(end 41.5 20.75)
+		(end 38 20.75)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -125,7 +125,7 @@
 	)
 	(fp_rect
 		(start -3 -7)
-		(end 41 20)
+		(end 37.5 20)
 		(stroke
 			(width 0.1)
 			(type default)
