@@ -1,0 +1,20 @@
+/*
+ * system.c
+ *
+ *  Created on: Jan 8, 2026
+ *      Author: Ivo Samuel
+ */
+#include "system.h"
+#include "lcd.h" // Adicione o include do driver
+
+void System_Init(void) {
+    LCD_Init();
+    LCD_Clear();
+
+    LCD_SetCursor(15, 2); // Centraliza um pouco
+    LCD_PrintString("TOPICOS II");
+
+    LCD_SetCursor(10, 4);
+    LCD_PrintString("PRESS START");
+}
+

@@ -1,0 +1,2 @@
+../Core/System/system.c:15:6:System_Init	8	static
+../Core/System/system.c:26:6:System_Loop	8	static

@@ -1,0 +1,6 @@
+../Core/Drivers/lcd.c:76:6:LCD_Write	16	static
+../Core/Drivers/lcd.c:84:6:LCD_Init	8	static
+../Core/Drivers/lcd.c:103:6:LCD_Clear	16	static
+../Core/Drivers/lcd.c:110:6:LCD_SetCursor	16	static
+../Core/Drivers/lcd.c:118:6:LCD_WriteChar	24	static
+../Core/Drivers/lcd.c:127:6:LCD_PrintString	16	static
