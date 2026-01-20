@@ -80,26 +80,62 @@ O sistema é composto pelos seguintes blocos funcionais:
 ## 4. Escolha dos Componentes
 
 ### 4.1 Microcontrolador – STM32F103C8T6 (Blue Pill)
+<div align="center">
+<br><figure align="center">
+  <div> 
+    <img src="../documentação/assets/OIP.png" width="333" label="Figura 1 - STM32F103C8T6 MCU">
+    <img src="../documentação/assets/STM32F103C8T6_Blue_Pill-1.jpg" width="500">
+  </div>
+</figure><br>
+<div align="center">
+  <figcaption>
+    <b>Figura 1</b> – Microcontrolador STM32F103C8T6 e sua Dev Board (Blue Pill)
+  </figcaption>
+</div><br>
+</div>
+
+
 O STM32F103C8T6 foi escolhido por oferecer um equilíbrio adequado entre desempenho, custo e disponibilidade. O núcleo ARM Cortex-M3 operando a até 72 MHz é suficiente para aplicações gráficas simples, leitura de entradas e controle de periféricos.
 
 A utilização do módulo Blue Pill reduz a complexidade do projeto, facilita testes e depuração e permite foco no desenvolvimento do restante do hardware.
 
----
-
 ### 4.2 Display – Nokia 5110 (PCD8544)
+
+<br><div align="center">
+  <figure>
+      <img src="../documentação/assets/img58.jpg" style="transform: rotate(180deg); width: 300px;">
+  </figure><br>
+</div><br>
+
+<div align="center">
+  <figcaption>
+    <b>Figura 2</b> – Display LCD Nokia 5110
+  </figcaption>
+</div><br>
+
 O display Nokia 5110 foi selecionado por sua simplicidade de interface, baixo consumo de energia e ampla documentação disponível. Sua resolução de 84x48 pixels é adequada para jogos 2D simples e menus gráficos.
 
----
-
 ### 4.3 Armazenamento – Cartão SD (Modo SPI)
+
+<br><div align="center">
+  <figure>
+      <img src="../documentação/assets/img7.jpg" width="300">
+  </figure><br>
+</div><br>
+
+<div align="center">
+  <figcaption>
+    <b>Figura 3</b> – Módulo Micro Cartão SD
+  </figcaption>
+</div><br>
+
 O cartão SD operando em modo SPI oferece alta capacidade de armazenamento com baixa complexidade de hardware. Ele é utilizado para armazenamento de dados persistentes como estados de jogos e configurações.
 
----
 
 ### 4.4 Interface de Entrada – Botões Táteis
 Os botões táteis foram escolhidos por sua robustez, simplicidade elétrica e fácil integração com GPIOs do microcontrolador. O tratamento de debounce é realizado via software.
 
----
+
 
 ### 4.5 Áudio – Buzzer Passivo
 O buzzer passivo permite geração de áudio por PWM, utilizando timers internos do STM32. Essa abordagem oferece flexibilidade sonora com baixo custo e simplicidade de hardware.
@@ -108,9 +144,19 @@ O buzzer passivo permite geração de áudio por PWM, utilizando timers internos
 
 ## 5. Projeto do Esquemático
 
+<figure align="center">
+  <img src="../documentação/assets/ProtoGame-schematic-v1_page-0001.jpg" width="1000">
+</figure><br>
 
+<div align="center">
+  <figcaption>
+    <b>Figura 4</b> – Esquemático v1
+  </figcaption><br>
+</div>
 
-[Esquemático elétrico completo](hardware/ProtoGame/ProtoGame-schematic-v1.pdf)
+<p align="center">
+  <a href="ProtoGame/ProtoGame-schematic-v1.pdf">Esquemático elétrico completo pdf</a>.
+</p>
 
 
 ### 5.1 Circuito de Alimentação
@@ -138,10 +184,29 @@ O buzzer passivo é acionado por PWM, permitindo geração de tons variados.
 
 ## 6. Definição de Pinout
 
+<br><div align="center">
+  <figure>
+      <img src="../documentação/assets/IMG-20251220-WA0038.jpg" width="400">
+  </figure><br>
+</div><br>
+
+<div align="center">
+  <figcaption>
+    <b>Figura 5</b> – IOC MCU Pinout
+  </figcaption>
+</div><br>
+
 ### 6.1 Tabela de Pinout
 
+
+<br><div align="center">
+
+<a id="tab-pinout"></a>
+
+**Tabela 1** – Mapeamento de pinos do STM32F103C8T6.
+  
 | Pino | Nome (MCU) | Função |
-|-----:|------------|--------|
+|:-----:|:------------:|:--------|
 | 1 | VBAT | Alimentação de bateria |
 | 5 | PD0 | Cristal externo (OSC_IN) |
 | 6 | PD1 | Cristal externo (OSC_OUT) |
@@ -160,7 +225,8 @@ O buzzer passivo é acionado por PWM, permitindo geração de tons variados.
 | 37 | PA14 | SWCLK |
 | 44 | BOOT0 | Seleção de boot |
 
----
+</div><br>
+
 
 ### 6.2 Justificativa do Pinout
 O pinout foi definido priorizando o uso do SPI1, timers dedicados para PWM e pinos compatíveis com depuração SWD, garantindo organização e facilidade de manutenção.
