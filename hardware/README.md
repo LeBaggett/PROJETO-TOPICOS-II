@@ -144,45 +144,128 @@ O buzzer passivo permite geração de áudio por PWM, utilizando timers internos
 
 ## 5. Projeto do Esquemático
 
+O esquemático elétrico do videogame portátil foi desenvolvido com foco em simplicidade, robustez elétrica e boas práticas de projeto para sistemas embarcados. A organização do circuito segue uma divisão funcional clara, permitindo fácil compreensão, manutenção e futuras modificações.
+
 <figure align="center">
   <img src="../documentação/assets/ProtoGame-schematic-v1_page-0001.jpg" width="1000">
-</figure><br>
-
-<div align="center">
   <figcaption>
-    <b>Figura 4</b> – Esquemático v1
-  </figcaption><br>
-</div>
+    <b>Figura 4</b> – Esquemático elétrico versão v1
+  </figcaption>
+</figure>
 
 <p align="center">
-  <a href="ProtoGame/ProtoGame-schematic-v1.pdf">Esquemático elétrico completo pdf</a>.
+  <a href="ProtoGame/ProtoGame-schematic-v1.pdf">Esquemático elétrico completo (PDF)</a>
 </p>
 
+---
 
 ### 5.1 Circuito de Alimentação
-O sistema opera integralmente em 3,3 V. Capacitores de bulk e cerâmicos são utilizados para garantir estabilidade da tensão e filtragem de ruídos.
 
-### 5.2 Desacoplamento do Microcontrolador e Periféricos
-Cada CI possui capacitores de desacoplamento próximos aos pinos de alimentação, reduzindo ruídos e garantindo operação confiável.
+O sistema foi projetado para operar integralmente em **3,3 V**, tensão compatível com o microcontrolador STM32F103C8T6 e com todos os periféricos utilizados. A alimentação principal é fornecida por uma bateria, cuja tensão é regulada por um regulador linear **AMS1117-3.3**.
 
-### 5.3 Comunicação SPI
-O barramento SPI é compartilhado entre display e cartão SD, utilizando sinais de Chip Select independentes e resistores em série para integridade de sinal.
+O regulador AMS1117 foi escolhido por sua ampla disponibilidade e facilidade de aplicação, sendo adequado para projetos educacionais e protótipos funcionais. Apesar de sua eficiência inferior quando comparado a reguladores chaveados, seu uso é justificado pelo consumo moderado do sistema e pela simplicidade do circuito.
 
-### 5.4 Interface com o Display
-O display utiliza SPI e sinais adicionais de controle, conectados diretamente aos GPIOs do STM32.
+Na entrada e na saída do regulador são utilizados capacitores de filtragem, conforme recomendado pelo fabricante, garantindo estabilidade da tensão e evitando oscilações indesejadas.
 
-### 5.5 Interface com o Cartão SD
-O cartão SD opera em modo SPI, com capacitores dedicados para suportar picos de corrente.
+---
 
-### 5.6 Interface de Entrada (Botões)
-Os botões são conectados diretamente aos GPIOs, com resistores de polarização e debounce via software.
+### 5.2 Capacitores Bulk e Filtragem de Baixa Frequência
 
-### 5.7 Circuito de Áudio
-O buzzer passivo é acionado por PWM, permitindo geração de tons variados.
+O capacitor **bulk** de maior valor (47 µF) foi inserido na linha de alimentação principal com o objetivo de absorver variações lentas de corrente e fornecer energia instantânea durante picos de consumo, especialmente durante inicialização do sistema e acesso ao cartão SD.
+
+Além do capacitor bulk principal, capacitores adicionais de **4,7 µF** são distribuídos próximos a blocos específicos do circuito, atuando como suporte local de energia. Essa abordagem reduz quedas momentâneas de tensão e melhora a estabilidade global da alimentação.
+
+O uso combinado de capacitores de diferentes valores cria um efeito de filtragem em larga faixa de frequência, aumentando a confiabilidade do sistema.
+
+---
+
+### 5.3 Desacoplamento do Microcontrolador e Periféricos
+
+Cada circuito integrado presente no projeto possui capacitores cerâmicos de **100 nF** posicionados o mais próximo possível de seus pinos de alimentação. Esses capacitores atuam como desacoplamento de alta frequência, reduzindo ruídos gerados por comutações internas e interferências no barramento de alimentação.
+
+O microcontrolador STM32F103C8T6 possui múltiplos pinos de alimentação (VDD e VDDA), sendo essencial o desacoplamento individual de cada domínio. O domínio analógico (VDDA) recebe atenção especial, garantindo menor interferência em funções sensíveis internas do microcontrolador.
+
+Essa prática evita resets espúrios, falhas de comunicação SPI e comportamentos instáveis durante operação contínua.
+
+---
+
+### 5.4 Comunicação SPI
+
+A comunicação SPI é utilizada para interface com o display gráfico Nokia 5110 e com o módulo de cartão SD. Ambos os dispositivos compartilham as linhas de clock (SCK) e dados (MOSI e MISO), utilizando sinais de **Chip Select independentes** para controle de acesso.
+
+Foram adicionados resistores em série nas linhas de clock e dados, próximos ao microcontrolador, com a finalidade de reduzir efeitos de ringing, overshoot e reflexões em trilhas mais longas. Essa técnica melhora significativamente a integridade do sinal, especialmente no acesso ao cartão SD, que é mais sensível a ruídos.
+
+Resistores de pull-up nos sinais de Chip Select garantem que os dispositivos permaneçam desabilitados durante a inicialização do sistema.
+
+---
+
+### 5.5 Interface com o Display LCD
+
+O display Nokia 5110 utiliza o barramento SPI para comunicação de dados e comandos, além de sinais adicionais de controle como **Reset** e **Data/Command**. Esses sinais são controlados diretamente por GPIOs do microcontrolador.
+
+A alimentação do display é feita em 3,3 V, eliminando a necessidade de conversores de nível lógico. O controle do backlight é realizado por meio de um pino dedicado, permitindo economia de energia quando o display não está em uso.
+
+A escolha desse display contribui para um circuito simples, de baixo consumo e fácil integração.
+
+---
+
+### 5.6 Interface com o Cartão SD
+
+O cartão SD é operado em **modo SPI**, reduzindo significativamente a complexidade do hardware quando comparado ao modo SD nativo. Essa abordagem é suficiente para leitura e escrita de dados de pequeno volume, como estados de jogos e configurações.
+
+Capacitores de desacoplamento dedicados são utilizados próximos ao módulo SD, devido aos picos de corrente característicos durante operações de escrita. Essa decisão é fundamental para evitar falhas intermitentes de comunicação.
+
+---
+
+### 5.7 Interface de Entrada – Botões
+
+Os botões táteis são conectados diretamente aos pinos GPIO do microcontrolador, utilizando resistores de polarização de **10 kΩ** para garantir níveis lógicos definidos quando não acionados. Essa configuração evita estados flutuantes e simplifica o circuito.
+
+O tratamento de debounce é realizado via software, reduzindo a quantidade de componentes externos e mantendo o esquemático mais enxuto.
+
+---
+
+### 5.8 Circuito de Áudio
+
+O circuito de áudio é composto por um buzzer passivo acionado por um pino de timer do STM32F103, permitindo geração de sinais PWM em diferentes frequências. Essa abordagem possibilita a criação de efeitos sonoros simples, adequados para um videogame portátil.
+
+A escolha do buzzer passivo oferece maior flexibilidade sonora em comparação a buzzers ativos, mantendo baixo custo e simplicidade de implementação.
+
+---
+
+## 6. Bill of Materials (BoM)
+
+A Bill of Materials apresenta todos os componentes utilizados no projeto, sendo essencial para reprodução do hardware, aquisição de peças e validação do circuito.
+
+<div align="center">
+
+<a id="tab-bom"></a>
+
+**Tabela 2** – Bill of Materials (BoM).
+
+| Referência | Qtd | Valor / Modelo | Função |
+|:----------|:---:|----------------|--------|
+| BT1 | 1 | Battery | Alimentação do sistema |
+| BZ1 | 1 | Buzzer | Saída de áudio |
+| C1–C2, C4–C6, C9 | 6 | 100 nF | Desacoplamento |
+| C3 | 1 | 47 µF | Capacitor bulk |
+| C7–C8 | 2 | 4.7 µF | Filtragem local |
+| J1 | 1 | SD Card Module | Armazenamento |
+| LCD_Nokia1 | 1 | Nokia 5110 | Display gráfico |
+| R1–R11 | 11 | 10 kΩ | Pull-up / Pull-down |
+| SW1 | 1 | SW_DPST_x2 | Chave geral |
+| SW2–SW10 | 9 | SW_MEC_5E | Botões |
+| U1 | 1 | STM32F103C8T6 | Microcontrolador |
+| U2 | 1 | AMS1117-3.3 | Regulador 3,3 V |
+
+
+</div>
 
 ---
 
 ## 6. Definição de Pinout
+
+
 
 <br><div align="center">
   <figure>
