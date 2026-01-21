@@ -318,17 +318,140 @@ O pinout foi definido priorizando o uso do SPI1, timers dedicados para PWM e pin
 
 ## 7. Projeto da PCB
 
-### 7.1 Considerações Gerais
-A PCB foi projetada considerando dimensões compactas, trilhas curtas para SPI e bom plano de terra.
+### 7.1 Considerações Iniciais e Restrições de Fabricação
 
-### 7.2 Primeira Versão da PCB
-A primeira versão serviu como validação elétrica e identificação de limitações de layout.
+O projeto da placa de circuito impresso (PCB) do videogame portátil foi desenvolvido considerando, desde o início, as **restrições reais de fabricação impostas pelo processo de fresagem CNC**, disponível no **Laboratório de Engenharia de Sistemas Computacionais (LESC) da Universidade Federal do Ceará (UFC)**.
 
-### 7.3 Segunda Versão da PCB
-A segunda versão incorporou melhorias de roteamento, ergonomia e posicionamento dos componentes.
+Diferentemente de processos industriais convencionais (como fabricação química com máscara de solda e acabamento superficial), a fresagem CNC impõe limitações específicas, tais como:
+- Ausência de máscara de solda  
+- Trilhas e espaçamentos maiores  
+- Vias de maior diâmetro  
+- Cobre exposto (sem HASL ou ENIG)  
 
-### 7.4 Análise do Layout Final
-O layout final apresenta melhor integridade de sinal, organização visual e facilidade de montagem.
+Essas restrições influenciaram diretamente as decisões de layout, regras de projeto e escolha de encapsulamentos, priorizando **robustez mecânica, confiabilidade elétrica e facilidade de montagem manual**.
+
+### 7.2 Definição do Stackup da PCB
+
+A placa foi projetada com **duas camadas condutoras (Top e Bottom)**, configuração que representa um compromisso adequado entre custo, complexidade e desempenho elétrico para a aplicação proposta.
+
+A escolha por duas camadas foi motivada pelos seguintes fatores:
+- Frequências de operação relativamente baixas (SPI e GPIO)  
+- Ausência de circuitos analógicos sensíveis ou RF  
+- Possibilidade de implementação de planos de referência contínuos  
+- Compatibilidade com o processo de fabricação por CNC  
+
+Essa configuração é suficiente para garantir bom retorno de corrente, roteamento organizado e estabilidade elétrica, sem a complexidade adicional de PCBs multicamadas.
+
+
+
+### 7.3 Regras de Projeto e Parâmetros de Fabricação
+
+As regras de projeto foram definidas explicitamente no KiCad, levando em consideração as capacidades da fresadora CNC disponível no laboratório.
+
+As principais regras adotadas foram:
+- **Largura mínima de trilha:** 0,5 mm  
+- **Diâmetro mínimo de furo de via:** 0,9 mm  
+- **Diâmetro do pad da via:** 1,5 mm  
+- **Espaçamento entre trilhas:** padrão do KiCad  
+
+Esses valores garantem:
+- Boa taxa de sucesso na fabricação  
+- Facilidade de soldagem manual  
+- Redução de falhas por descontinuidade de trilhas  
+
+A espessura da placa foi mantida como o **valor padrão do KiCad**, compatível com laminados FR4 comumente utilizados em ambientes acadêmicos.
+
+
+### 7.4 Estratégia de Aterramento (GND)
+
+O aterramento do sistema foi implementado por meio de **planos de GND contínuos em ambas as camadas da PCB**, cobrindo praticamente toda a área da placa.
+
+Essa abordagem proporciona:
+- Caminhos de retorno de corrente de baixa impedância  
+- Redução de ruído eletromagnético  
+- Maior estabilidade para o barramento SPI  
+- Melhor comportamento do sistema de alimentação  
+
+Não foram utilizadas **vias de costura (stitching vias)** dedicadas exclusivamente ao aterramento. Apenas vias funcionais foram empregadas, conectando o plano de GND entre as camadas quando necessário. Essa decisão simplificou o processo de fabricação e montagem, sendo considerada adequada para as frequências e correntes envolvidas no projeto.
+
+
+
+### 7.5 Distribuição de Alimentação e Desacoplamento
+
+Todo o sistema opera em **3,3 V**, tensão compatível com o microcontrolador STM32F103, o display gráfico e o cartão SD. A utilização de uma única tensão de alimentação reduz a complexidade do circuito e elimina a necessidade de conversores de nível lógico.
+
+#### 7.5.1 Capacitores de Desacoplamento
+Foram utilizados capacitores cerâmicos de **100 nF**, posicionados o mais próximo possível dos pinos de alimentação do microcontrolador e dos periféricos. Essa prática minimiza a indutância parasita e melhora a resposta a transientes de corrente.
+
+#### 7.5.2 Capacitor Bulk
+Um capacitor eletrolítico de **47 µF** foi posicionado próximo ao microcontrolador, atuando como capacitor de bulk para absorver variações mais lentas de corrente e estabilizar a tensão do barramento de alimentação.
+
+#### 7.5.3 Alimentação do Cartão SD e do Display
+Tanto o módulo de cartão SD quanto o display gráfico possuem **capacitores dedicados de desacoplamento**, além de estarem conectados ao barramento principal de 3,3 V. Essa decisão considera os picos de corrente característicos do cartão SD durante operações de leitura e escrita.
+
+O dimensionamento dos capacitores seguiu valores amplamente utilizados em aplicações similares, sendo suficiente para garantir funcionamento estável, mesmo sem cálculo analítico detalhado.
+
+
+
+### 7.6 Roteamento do Barramento SPI
+
+O barramento SPI é utilizado para comunicação com o display gráfico e com o cartão SD. O roteamento foi realizado buscando:
+- Trilhas relativamente curtas  
+- Pouca utilização de vias  
+- Organização vertical das conexões  
+
+Considerando as dimensões da placa, a maior distância entre dispositivos no barramento SPI é da ordem de **50 mm**, valor adequado para as frequências utilizadas no projeto.
+
+No esquemático, foram previstos **resistores em série** nas linhas:
+- SCK: 33 Ω  
+- MOSI: 22 Ω  
+
+Entretanto, esses resistores não foram implementados na versão final do layout da PCB. Por outro lado, foram utilizados **resistores de pull-up de 10 kΩ nas linhas de Chip Select**, garantindo que os dispositivos SPI permaneçam desabilitados durante a inicialização do sistema.
+
+
+
+### 7.7 Clock do Microcontrolador
+
+O projeto utiliza o **módulo Blue Pill**, que já incorpora um cristal externo (8 MHz ou 16 MHz, dependendo da versão), bem como os capacitores de carga necessários.
+
+Essa escolha elimina a necessidade de roteamento de sinais de clock sensíveis na PCB principal, reduzindo riscos de ruído, erros de temporização e falhas de oscilação, além de simplificar o layout.
+
+
+
+### 7.8 Considerações Mecânicas e Ergonomia
+
+A disposição dos componentes na PCB levou em conta simultaneamente:
+- **Ergonomia do usuário**  
+- **Simetria visual**  
+- **Facilidade de roteamento**  
+
+Os botões foram posicionados de forma a permitir operação confortável com os polegares, enquanto o display foi centralizado mecanicamente, considerando sua espessura e o uso de espaçadores.
+
+Foram utilizados **furos de montagem com diâmetro de 3,2 mm**, compatíveis com parafusos M3, permitindo a fixação segura da placa em um eventual gabinete.
+
+
+
+### 7.9 Evolução do Projeto: PCB V0 para PCB V1
+
+A transição da versão inicial da PCB (V0) para a versão revisada (V1) foi motivada por múltiplos fatores:
+- Correção de erros elétricos  
+- Ajustes mecânicos  
+- Melhor distribuição dos componentes  
+- Melhoria estética do conjunto  
+- Facilidade de fabricação e montagem  
+
+Durante esse processo, foi identificado um **erro dimensional em um footprint**, que resultava em interferência mecânica durante a montagem. Esse problema foi corrigido na versão V1, reforçando a importância de validações mecânicas e revisões iterativas no projeto de PCBs.
+
+
+
+### 7.10 Limitações Assumidas do Layout
+
+Algumas limitações foram conscientemente aceitas no projeto, tais como:
+- Ausência de máscara de solda  
+- Não utilização de vias de costura de GND  
+- Resistores série do SPI não implementados no layout  
+
+Essas decisões são justificadas pelo contexto acadêmico, pelas restrições de fabricação por CNC e pelos requisitos elétricos relativamente modestos do sistema.
 
 ---
 
