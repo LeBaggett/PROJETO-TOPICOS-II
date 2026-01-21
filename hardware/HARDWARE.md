@@ -146,16 +146,18 @@ O buzzer passivo permite geração de áudio por PWM, utilizando timers internos
 
 O esquemático elétrico do videogame portátil foi desenvolvido com foco em simplicidade, robustez elétrica e boas práticas de projeto para sistemas embarcados. A organização do circuito segue uma divisão funcional clara, permitindo fácil compreensão, manutenção e futuras modificações.
 
+<div align="center">
 <figure align="center">
   <img src="../documentação/assets/ProtoGame-schematic-v1_page-0001.jpg" width="1000">
   <figcaption>
     <b>Figura 4</b> – Esquemático elétrico versão v1
   </figcaption>
 </figure>
+</div><br>
 
 <p align="center">
-  <a href="ProtoGame/ProtoGame-schematic-v1.pdf">Esquemático elétrico completo (PDF)</a>
-</p>
+  <a href="/ProtoGame/ProtoGame-jobset-file/ProtoGame-schematic-v1/ProtoGame.pdf">Esquemático elétrico completo (PDF)</a>
+</p><br>
 
 ---
 
@@ -332,6 +334,20 @@ Essas restrições influenciaram diretamente as decisões de layout, regras de p
 
 ### 7.2 Definição do Stackup da PCB
 
+<div align="center">
+<br><figure align="center">
+  <div> 
+    <img src="../documentação/assets/Screenshot 2026-01-20 070422.png" width="500">
+    <img src="../documentação/assets/Screenshot 2026-01-20 070256.png" width="500">
+  </div>
+</figure><br>
+<div align="center">
+  <figcaption>
+    <b>Figura 6</b> – Camadas Top e Bottom da PCB
+  </figcaption>
+</div><br>
+</div>
+
 A placa foi projetada com **duas camadas condutoras (Top e Bottom)**, configuração que representa um compromisso adequado entre custo, complexidade e desempenho elétrico para a aplicação proposta.
 
 A escolha por duas camadas foi motivada pelos seguintes fatores:
@@ -398,7 +414,21 @@ O dimensionamento dos capacitores seguiu valores amplamente utilizados em aplica
 O barramento SPI é utilizado para comunicação com o display gráfico e com o cartão SD. O roteamento foi realizado buscando:
 - Trilhas relativamente curtas  
 - Pouca utilização de vias  
-- Organização vertical das conexões  
+- Organização vertical das conexões
+
+<div align="center">
+<br><figure align="center">
+  <div> 
+    <img src="../documentação/assets/Screenshot 2026-01-20 070617.png" width="500">
+    <img src="../documentação/assets/Screenshot 2026-01-20 070839.png" width="500">
+  </div>
+</figure><br>
+<div align="center">
+  <figcaption>
+    <b>Figura 7</b> – Roteamento nas camadas Top e Bottom da PCB
+  </figcaption>
+</div><br>
+</div> 
 
 Considerando as dimensões da placa, a maior distância entre dispositivos no barramento SPI é da ordem de **50 mm**, valor adequado para as frequências utilizadas no projeto.
 
