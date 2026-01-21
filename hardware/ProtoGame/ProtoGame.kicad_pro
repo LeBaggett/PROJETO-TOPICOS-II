@@ -511,10 +511,10 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "PCB_MANUFACTORING_FILES/",
+      "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "ProtoGamev1.stl",
+      "step": ".step",
       "svg": "",
       "vrml": ""
     },
