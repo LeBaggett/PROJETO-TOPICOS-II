@@ -1,0 +1,5 @@
+../Core/Src/nokia5110.c:12:6:LCD_Init	1
+../Core/Src/nokia5110.c:23:6:LCD_Write	1
+../Core/Src/nokia5110.c:32:6:LCD_Reset	1
+../Core/Src/nokia5110.c:38:6:LCD_Clear	2
+../Core/Src/nokia5110.c:45:6:LCD_SetXY	1
