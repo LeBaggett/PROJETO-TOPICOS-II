@@ -117,7 +117,7 @@ int main(void)
   LCD_PCD8544_write_line(&gLcdScreen, 0, "FUNCIONOU");
   LCD_PCD8544_write_line(&gLcdScreen, 2, "STM32 + 5110");
   LCD_PCD8544_write_line(&gLcdScreen, 4, "PCD8544");
-
+  LCD_PCD8544_write_line(&gLcdScreen, 5, "GRC NELES!");
 
   // LCD - welcome screen
 //    LCD_PCD8544_write_line(&gLcdScreen, 0, "Hello, world!");
