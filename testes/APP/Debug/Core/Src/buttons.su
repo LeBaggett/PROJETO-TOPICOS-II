@@ -1,0 +1,3 @@
+../Core/Src/buttons.c:12:6:Buttons_init	4	static
+../Core/Src/buttons.c:19:17:Buttons_ReadRaw	8	static
+../Core/Src/buttons.c:36:10:Buttons_ReadDebounced	16	static
