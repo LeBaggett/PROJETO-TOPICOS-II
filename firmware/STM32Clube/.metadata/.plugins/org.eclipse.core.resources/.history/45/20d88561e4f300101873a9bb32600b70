@@ -1,0 +1,40 @@
+/*
+ * lcd.c
+ *
+ *  Created on: Jan 8, 2026
+ *      Author: Ivo Samuel
+ */
+#include "lcd.h"
+
+extern SPI_HandleTypeDef hspi1; // Puxa a configuração do SPI1 do main.c
+
+// Função para enviar dados ou comandos
+void LCD_Write(uint8_t data, uint8_t mode) {
+    HAL_GPIO_WritePin(LCD_DC_GPIO_Port, LCD_DC_Pin, mode); // Seleciona modo
+    HAL_GPIO_WritePin(LCD_CE_GPIO_Port, LCD_CE_Pin, GPIO_PIN_RESET); // Ativa o chip
+    HAL_SPI_Transmit(&hspi1, &data, 1, HAL_MAX_DELAY); // Envia via SPI
+    HAL_GPIO_WritePin(LCD_CE_GPIO_Port, LCD_CE_Pin, GPIO_PIN_SET); // Desativa o chip
+}
+
+// Sequência de inicialização do Nokia 5110
+void LCD_Init(void) {
+    // Reset de hardware
+    HAL_GPIO_WritePin(LCD_RST_GPIO_Port, LCD_RST_Pin, GPIO_PIN_RESET);
+    HAL_Delay(10);
+    HAL_GPIO_WritePin(LCD_RST_GPIO_Port, LCD_RST_Pin, GPIO_PIN_SET);
+
+    // Comandos de configuração do controlador PCD8544
+    LCD_Write(0x21, 0); // Ativa comandos estendidos
+    LCD_Write(0xB0, 0); // Ajusta o contraste (pode variar de 0x80 a 0xFF)
+    LCD_Write(0x04, 0); // Coeficiente de temperatura
+    LCD_Write(0x14, 0); // Ajuste de bias
+    LCD_Write(0x20, 0); // Volta para comandos básicos
+    LCD_Write(0x0C, 0); // Modo de exibição normal
+}
+
+void LCD_Clear(void) {
+    for (int i = 0; i < 504; i++) { // 84x48 pixels / 8 bits = 504 bytes
+        LCD_Write(0x00, 1);
+    }
+}
+

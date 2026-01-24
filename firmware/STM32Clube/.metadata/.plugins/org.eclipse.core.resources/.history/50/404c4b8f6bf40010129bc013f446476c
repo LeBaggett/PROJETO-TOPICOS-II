@@ -1,0 +1,32 @@
+/*
+ * lcd.h
+ *
+ *  Created on: Jan 8, 2026
+ *      Author: Ivo Samuel
+ */
+
+#ifndef CORE_DRIVERS_LCD_H_
+#define CORE_DRIVERS_LCD_H_
+
+#include "main.h"
+
+// Pinos de Controle do LCD - Versão Final
+#define LCD_RST_Pin       GPIO_PIN_0
+#define LCD_RST_GPIO_Port GPIOA
+#define LCD_DC_Pin        GPIO_PIN_1
+#define LCD_DC_GPIO_Port  GPIOA
+#define LCD_CE_Pin        GPIO_PIN_3
+#define LCD_CE_GPIO_Port  GPIOA
+
+// Novo: Controle da luz de fundo
+#define LCD_BL_Pin        GPIO_PIN_0
+#define LCD_BL_GPIO_Port  GPIOB
+
+// Protótipos das funções
+void LCD_Init(void);
+void LCD_Write(uint8_t data, uint8_t mode);
+void LCD_Clear(void);
+void LCD_PrintString(char *str);
+void LCD_SetCursor(uint8_t x, uint8_t y);
+
+#endif

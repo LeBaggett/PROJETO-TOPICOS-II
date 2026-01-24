@@ -1,0 +1,6 @@
+../Core/Drivers/lcd.c:76:6:LCD_Write	1
+../Core/Drivers/lcd.c:84:6:LCD_Init	1
+../Core/Drivers/lcd.c:103:6:LCD_Clear	2
+../Core/Drivers/lcd.c:110:6:LCD_SetCursor	3
+../Core/Drivers/lcd.c:118:6:LCD_WriteChar	4
+../Core/Drivers/lcd.c:127:6:LCD_PrintString	2

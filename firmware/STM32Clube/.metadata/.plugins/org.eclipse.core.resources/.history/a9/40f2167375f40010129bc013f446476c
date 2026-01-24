@@ -1,0 +1,27 @@
+/*
+ * system.c
+ *
+ *  Created on: Jan 8, 2026
+ *      Author: Ivo Samuel
+ */
+#ifndef CORE_SYSTEM_SYSTEM_H_
+#define CORE_SYSTEM_SYSTEM_H_
+
+#include "main.h"
+
+// Definição dos estados
+typedef enum {
+    STATE_SPLASH,
+    STATE_MENU,
+    STATE_GAME,
+    STATE_PAUSE
+} SystemState_t;
+
+// Extern para que o main.c veja a variável global
+extern SystemState_t systemState;
+
+// Protótipos das funções (Isso tira o warning do main.c)
+void System_Init(void);
+void System_Loop(void);
+
+#endif

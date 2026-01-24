@@ -1,0 +1,19 @@
+/*
+ * system.c
+ *
+ *  Created on: Jan 8, 2026
+ *      Author: Ivo Samuel
+ */
+#include "system.h"
+#include "lcd.h" // Adicione o include do driver
+
+void System_Init(void) {
+    LCD_Init();   // Inicializa a tela
+    LCD_Clear();  // Limpa qualquer lixo da memória
+
+    // Desenha algo simples (uma linha de teste)
+    for(int i = 0; i < 84; i++) {
+        LCD_Write(0xFF, 1);
+    }
+}
+
