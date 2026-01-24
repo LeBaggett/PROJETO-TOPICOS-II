@@ -1,0 +1,4 @@
+../Core/Src/screen_main_menu.c:24:13:draw_menu	32	static
+../Core/Src/screen_main_menu.c:44:13:menu_on_enter	8	static
+../Core/Src/screen_main_menu.c:50:13:menu_on_update	16	static
+../Core/Src/screen_main_menu.c:72:13:menu_on_exit	4	static

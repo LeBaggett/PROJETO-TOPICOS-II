@@ -113,11 +113,12 @@ int main(void)
 
   LCD_PCD8544_init(&gLcdScreen);
 
-  HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_RESET);
+  LCD_PCD8544_clear_ram(&gLcdScreen);
+
+  HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_SET);
   LCD_PCD8544_write_line(&gLcdScreen, 0, "FUNCIONOU");
-  LCD_PCD8544_write_line(&gLcdScreen, 2, "STM32 + 5110");
-  LCD_PCD8544_write_line(&gLcdScreen, 4, "PCD8544");
-  LCD_PCD8544_write_line(&gLcdScreen, 5, "GRC NELES!");
+  LCD_PCD8544_write_line(&gLcdScreen, 2, "GRC NELES!");
+
 
   // LCD - welcome screen
 //    LCD_PCD8544_write_line(&gLcdScreen, 0, "Hello, world!");

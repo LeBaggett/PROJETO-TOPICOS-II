@@ -31,7 +31,7 @@ void LCD_PCD8544_init(LCD_PCD8544_screen_t* scr)
     LCD_PCD8544_LL_set_function_set(scr, power_down, addressing_type, 1);
 
     LCD_PCD8544_LL_set_bias_system(scr, 4);      // ✅ Bias 1:48 (mais estável)
-    LCD_PCD8544_LL_set_VOP(scr, 0xB1);           // ✅ CONTRASTE (AJUSTÁVEL)
+    LCD_PCD8544_LL_set_VOP(scr, 0xB2);           // ✅ CONTRASTE (AJUSTÁVEL)
     LCD_PCD8544_LL_set_temperature_control(scr, 0); // ✅ temperatura padrão
 
     // === BASIC COMMANDS ===

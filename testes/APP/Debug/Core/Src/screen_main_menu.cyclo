@@ -1,0 +1,4 @@
+../Core/Src/screen_main_menu.c:24:13:draw_menu	3
+../Core/Src/screen_main_menu.c:44:13:menu_on_enter	1
+../Core/Src/screen_main_menu.c:50:13:menu_on_update	5
+../Core/Src/screen_main_menu.c:72:13:menu_on_exit	1
