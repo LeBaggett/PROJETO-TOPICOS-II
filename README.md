@@ -83,8 +83,8 @@ O sistema é composto pelos seguintes blocos funcionais:
 <div align="center">
 <br><figure align="center">
   <div> 
-    <img src="../documentação/assets/OIP.png" width="333" label="Figura 1 - STM32F103C8T6 MCU">
-    <img src="../documentação/assets/STM32F103C8T6_Blue_Pill-1.jpg" width="500">
+    <img src="documentação/assets/OIP.png" width="333" label="Figura 1 - STM32F103C8T6 MCU">
+    <img src="documentação/assets/STM32F103C8T6_Blue_Pill-1.jpg" width="500">
   </div>
 </figure><br>
 <div align="center">
@@ -179,7 +179,7 @@ Essas características tornam a família de microcontroladores STM32F103xx de m�
 
 <br><div align="center">
   <figure>
-      <img src="../documentação/assets/img58.jpg" style="transform: rotate(180deg); width: 300px;">
+      <img src="documentação/assets/img58.jpg" style="transform: rotate(180deg); width: 300px;">
   </figure><br>
 </div><br>
 
@@ -195,7 +195,7 @@ O display Nokia 5110 foi selecionado por sua simplicidade de interface, baixo co
 
 <br><div align="center">
   <figure>
-      <img src="../documentação/assets/img7.jpg" width="300">
+      <img src="documentação/assets/img7.jpg" width="300">
   </figure><br>
 </div><br>
 
@@ -224,7 +224,7 @@ O esquemático elétrico do videogame portátil foi desenvolvido com foco em sim
 
 <div align="center">
 <figure align="center">
-  <img src="../documentação/assets/ProtoGame-schematic-v1_page-0001.jpg" width="1000">
+  <img src="documentação/assets/ProtoGame-schematic-v1_page-0001.jpg" width="1000">
   <figcaption>
     <b>Figura 4</b> – Esquemático elétrico versão v1
   </figcaption>
@@ -232,7 +232,7 @@ O esquemático elétrico do videogame portátil foi desenvolvido com foco em sim
 </div><br>
 
 <p align="center">
-  <a href="/ProtoGame/ProtoGame-jobset-file/ProtoGame-schematic-v1/ProtoGame.pdf">Esquemático elétrico completo (PDF)</a>
+  <a href="hardware/ProtoGame/ProtoGame-jobset-file/ProtoGame-schematic-v1/ProtoGame.pdf">Esquemático elétrico completo (PDF)</a>
 </p><br>
 
 ---
@@ -347,7 +347,7 @@ A Bill of Materials apresenta todos os componentes utilizados no projeto, sendo 
 
 <br><div align="center">
   <figure>
-      <img src="../documentação/assets/IMG-20251220-WA0038.jpg" width="400">
+      <img src="documentação/assets/IMG-20251220-WA0038.jpg" width="400">
   </figure><br>
 </div><br>
 
@@ -413,8 +413,8 @@ Essas restrições influenciaram diretamente as decisões de layout, regras de p
 <div align="center">
 <br><figure align="center">
   <div> 
-    <img src="../documentação/assets/Screenshot 2026-01-20 070422.png" width="500">
-    <img src="../documentação/assets/Screenshot 2026-01-20 070256.png" width="500">
+    <img src="documentação/assets/Screenshot 2026-01-20 070422.png" width="500">
+    <img src="documentação/assets/Screenshot 2026-01-20 070256.png" width="500">
   </div>
 </figure><br>
 <div align="center">
@@ -495,8 +495,8 @@ O barramento SPI é utilizado para comunicação com o display gráfico e com o 
 <div align="center">
 <br><figure align="center">
   <div> 
-    <img src="../documentação/assets/Screenshot 2026-01-20 070617.png" width="500">
-    <img src="../documentação/assets/Screenshot 2026-01-20 070839.png" width="500">
+    <img src="documentação/assets/Screenshot 2026-01-20 070617.png" width="500">
+    <img src="documentação/assets/Screenshot 2026-01-20 070839.png" width="500">
   </div>
 </figure><br>
 <div align="center">
@@ -569,8 +569,8 @@ Modelos 3D foram gerados no KiCad para validação mecânica e visual.
 <div align="center">
 <br><figure align="center">
   <div> 
-    <img src="../documentação/assets/ProtoGamev1TOP.png" width="500">
-    <img src="../documentação/assets/ProtoGamev1BOTTOM.png" width="500">
+    <img src="documentação/assets/ProtoGamev1TOP.png" width="500">
+    <img src="documentação/assets/ProtoGamev1BOTTOM.png" width="500">
   </div>
 </figure><br>
 <div align="center">
@@ -587,8 +587,8 @@ O posicionamento dos componentes facilita acesso ao display, botões e cartão S
 <div align="center">
 <br><figure align="center">
   <div> 
-    <img src="../documentação/assets/WhatsApp Image 2026-01-22 at 18.15.01.jpeg" width="500">
-    <img src="../documentação/assets/WhatsApp Image 2026-01-22 at 18.15.01aa.jpeg" width="500">
+    <img src="documentação/assets/WhatsApp Image 2026-01-22 at 18.15.01.jpeg" width="500">
+    <img src="documentação/assets/WhatsApp Image 2026-01-22 at 18.15.01aa.jpeg" width="500">
   </div>
 </figure><br>
 <div align="center">
@@ -606,6 +606,6 @@ O projeto atinge os objetivos propostos, resultando em um hardware funcional, or
 ---
 
 ## 10. Referências
-- Datasheets: <a href="../documentação/Datasheets">Datasheets consultados</a>  
+- Datasheets: <a href="documentação/Datasheets">Datasheets consultados</a>  
 - Application Notes da STMicroelectronics  
 - KiCad Documentation  
