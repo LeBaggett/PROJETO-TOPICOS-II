@@ -99,6 +99,82 @@ O STM32F103C8T6 foi escolhido por oferecer um equilíbrio adequado entre desempe
 
 A utilização do módulo Blue Pill reduz a complexidade do projeto, facilita testes e depuração e permite foco no desenvolvimento do restante do hardware.
 
+## Visão Geral
+
+A família **STM32F103xx de média densidade da linha performance** incorpora o núcleo **Arm® Cortex®-M3 de 32 bits**, de alto desempenho, operando a uma frequência de até **72 MHz**, memórias embarcadas de alta velocidade (**Flash de até 128 Kbytes** e **SRAM de até 20 Kbytes**), além de uma ampla variedade de **E/S aprimoradas** e **periféricos** conectados a dois barramentos **APB**.
+
+Todos os dispositivos oferecem **dois ADCs de 12 bits**, **três temporizadores de uso geral de 16 bits** mais **um temporizador PWM**, bem como interfaces de comunicação padrão e avançadas: até **dois I2Cs e SPIs**, **três USARTs**, **USB** e **CAN**.
+
+Os dispositivos operam com alimentação de **2,0 a 3,6 V**. Estão disponíveis tanto na faixa de temperatura de **–40 a +85 °C** quanto na faixa estendida de **–40 a +105 °C**. Um conjunto abrangente de **modos de economia de energia** permite o projeto de aplicações de baixo consumo.
+
+A família STM32F103xx de média densidade inclui dispositivos em **seis tipos diferentes de encapsulamento**, variando de **36 pinos a 100 pinos**. Dependendo do dispositivo escolhido, diferentes conjuntos de periféricos são incluídos. A descrição a seguir fornece uma visão geral da gama completa de periféricos oferecidos por esta família.
+
+Essas características tornam a família de microcontroladores STM32F103xx de média densidade adequada para uma ampla gama de aplicações, como **acionamento de motores**, **controle de aplicações**, **equipamentos médicos e portáteis**, **periféricos para PC e jogos**, **plataformas GPS**, **aplicações industriais**, **CLPs**, **inversores**, **impressoras**, **scanners**, **sistemas de alarme**, **interfones de vídeo** e **sistemas HVAC**.
+
+---
+
+## Características
+
+### Núcleo
+- Núcleo **Arm® Cortex®-M3 de 32 bits**
+- Frequência máxima de **72 MHz**
+- Desempenho de **1,25 DMIPS/MHz** (Dhrystone 2.1) com acesso à memória sem wait states
+- Multiplicação em ciclo único e divisão por hardware
+
+### Memórias
+- **64 ou 128 Kbytes** de memória Flash
+- **20 Kbytes** de SRAM
+
+### Gerenciamento de clock, reset e alimentação
+- Alimentação da aplicação e E/S de **2,0 a 3,6 V**
+- **POR**, **PDR** e detector de tensão programável (**PVD**)
+- Oscilador a cristal de **4 a 16 MHz**
+- Oscilador RC interno de **8 MHz** calibrado em fábrica
+- Oscilador RC interno de **40 kHz**
+- **PLL** para clock da CPU
+- Oscilador de **32 kHz** para RTC com calibração
+
+### Baixo consumo
+- Modos **Sleep**, **Stop** e **Standby**
+- Alimentação **VBAT** para RTC e registradores de backup
+
+### Conversores A/D
+- **2 conversores A/D de 12 bits**, **1 µs** (até **16 canais**)
+- Faixa de conversão: **0 a 3,6 V**
+- Capacidade de **dupla amostragem e retenção**
+- **Sensor de temperatura** interno
+
+### DMA
+- Controlador DMA de **7 canais**
+- Periféricos suportados: temporizadores, ADC, SPI, I2C e USART
+
+### Portas de E/S
+- Até **80 portas de E/S rápidas**
+- **26 / 37 / 51 / 80 E/S**, todas mapeáveis em **16 vetores de interrupção externa** e quase todas **tolerantes a 5 V**
+
+### Depuração
+- Interfaces de depuração **Serial Wire Debug (SWD)** e **JTAG**
+
+### Temporizadores
+- **Três temporizadores de 16 bits**, cada um com até 4 canais IC/OC/PWM ou contador de pulsos e entrada de encoder incremental (quadratura)
+- Temporizador PWM de **16 bits para controle de motores**, com geração de dead-time e parada de emergência
+- **Dois watchdogs** (independente e de janela)
+- Temporizador **SysTick** de 24 bits (contador regressivo)
+
+### Interfaces de comunicação
+- Até **nove interfaces de comunicação**
+- Até **duas interfaces I2C** (SMBus/PMBus®)
+- Até **três USARTs** (interface ISO 7816, LIN, capacidade IrDA, controle de modem)
+- Até **duas interfaces SPI** (até **18 Mbit/s**)
+- Interface **CAN 2.0B Active**
+- Interface **USB 2.0 Full-Speed**
+
+### Outros recursos
+- Unidade de cálculo **CRC**
+- **ID único de 96 bits**
+- Encapsulamentos **ECOPACK®**
+
+
 ### 4.2 Display – Nokia 5110 (PCD8544)
 
 <br><div align="center">
@@ -490,8 +566,37 @@ Essas decisões são justificadas pelo contexto acadêmico, pelas restrições d
 ### 8.1 Modelo 3D da PCB
 Modelos 3D foram gerados no KiCad para validação mecânica e visual.
 
+<div align="center">
+<br><figure align="center">
+  <div> 
+    <img src="../documentação/assets/ProtoGamev1TOP.png" width="500">
+    <img src="../documentação/assets/ProtoGamev1BOTTOM.png" width="500">
+  </div>
+</figure><br>
+<div align="center">
+  <figcaption>
+    <b>Figura 8</b> – Top e Bottom do Modelo 3D da PCB
+  </figcaption>
+</div><br>
+</div> 
+
+
 ### 8.2 Considerações de Montagem
 O posicionamento dos componentes facilita acesso ao display, botões e cartão SD.
+
+<div align="center">
+<br><figure align="center">
+  <div> 
+    <img src="../documentação/assets/WhatsApp Image 2026-01-22 at 18.15.01.jpeg" width="500">
+    <img src="../documentação/assets/WhatsApp Image 2026-01-22 at 18.15.01aa.jpeg" width="500">
+  </div>
+</figure><br>
+<div align="center">
+  <figcaption>
+    <b>Figura 7</b> – Top e Bottom da PCB
+  </figcaption>
+</div><br>
+</div>
 
 ---
 
@@ -501,7 +606,6 @@ O projeto atinge os objetivos propostos, resultando em um hardware funcional, or
 ---
 
 ## 10. Referências
-- Datasheet STM32F103  
-- Documentação do display PCD8544  
+- Datasheets: <a href="../documentação/Datasheets">Datasheets consultados</a>  
 - Application Notes da STMicroelectronics  
 - KiCad Documentation  
