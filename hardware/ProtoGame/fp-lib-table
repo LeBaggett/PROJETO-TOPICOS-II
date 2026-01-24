@@ -1,0 +1,7 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "slidesw")(type "KiCad")(uri "${KIPRJMOD}/slidesw.pretty")(options "")(descr ""))
+  (lib (name "STM32")(type "KiCad")(uri "${KIPRJMOD}/STM32/STM32.pretty")(options "")(descr ""))
+  (lib (name "microsd")(type "KiCad")(uri "${KIPRJMOD}/MicroSD_CARD/microsd.pretty")(options "")(descr ""))
+  (lib (name "nokia_5110")(type "KiCad")(uri "${KIPRJMOD}/LCD/nokia_5110.pretty")(options "")(descr ""))
+)

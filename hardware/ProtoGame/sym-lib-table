@@ -1,0 +1,7 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "LCD_Oled")(type "KiCad")(uri "${KIPRJMOD}/LCD_Oled.kicad_sym")(options "")(descr ""))
+  (lib (name "SDCARD_MODULE")(type "KiCad")(uri "${KIPRJMOD}/SDCARD_MODULE.kicad_sym")(options "")(descr ""))
+  (lib (name "LCD_NOKIA-5110")(type "KiCad")(uri "${KIPRJMOD}/LCD_NOKIA-5110.kicad_sym")(options "")(descr ""))
+  (lib (name "ZC323000")(type "KiCad")(uri "${KIPRJMOD}/STM32/ZC323000.kicad_sym")(options "")(descr ""))
+)
