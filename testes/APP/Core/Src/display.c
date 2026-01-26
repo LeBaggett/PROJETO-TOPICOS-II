@@ -9,8 +9,8 @@ static void Display_Init_Impl(void)
     // Aqui você define PINOS, SPI, etc (1 vez só)
     lcd.mPinout.mSpiHandle = &hspi1;
 
-    lcd.mPinout.mLcdSpiRstPort = LCD_RESET_GPIO_Port;
-    lcd.mPinout.mLcdSpiRstPin  = LCD_RESET_Pin;
+    lcd.mPinout.mLcdSpiRstPort = LCD_RST_GPIO_Port;
+    lcd.mPinout.mLcdSpiRstPin  = LCD_RST_Pin;
 
     lcd.mPinout.mLcdSpiCePort  = LCD_CS_GPIO_Port;
     lcd.mPinout.mLcdSpiCePin   = LCD_CS_Pin;

@@ -1,0 +1,2 @@
+../Core/Src/buzzer.c:12:6:Buzzer_Start	1
+../Core/Src/buzzer.c:18:6:Buzzer_Stop	1

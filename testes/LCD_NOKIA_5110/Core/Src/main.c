@@ -24,7 +24,7 @@
 
 #include "lcd_pcd8544.h"
 
-  extern LCD_PCD8544_screen_t gLcdScreen;
+extern LCD_PCD8544_screen_t gLcdScreen;
 
 #include <string.h>
 

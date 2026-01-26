@@ -1,0 +1,6 @@
+../Core/Src/buttons.c:27:6:Buttons_Init	2
+../Core/Src/buttons.c:36:6:Buttons_Update	2
+../Core/Src/buttons.c:45:9:Button_Pressed	4
+../Core/Src/buttons.c:53:9:Button_Released	4
+../Core/Src/buttons.c:61:15:Button_GetState	2
+../Core/Src/buttons.c:67:15:Button_GetLastState	2

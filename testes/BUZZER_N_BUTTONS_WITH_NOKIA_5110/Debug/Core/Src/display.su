@@ -1,0 +1,3 @@
+../Core/Src/display.c:8:6:Display_Init	8	static
+../Core/Src/display.c:41:6:Display_Clear	8	static
+../Core/Src/display.c:46:6:Display_WriteLine	16	static

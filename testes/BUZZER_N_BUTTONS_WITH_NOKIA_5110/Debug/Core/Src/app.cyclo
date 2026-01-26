@@ -1,0 +1,2 @@
+../Core/Src/app.c:10:12:App_GetButtonPressed	3
+../Core/Src/app.c:23:6:App_OnButtonPressed	10
